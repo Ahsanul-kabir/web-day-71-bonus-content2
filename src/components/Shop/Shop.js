@@ -13,6 +13,12 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
+        fetch('/products')
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    }, [])
+
+    useEffect(() => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
         const previousCart = productKeys.map(existingKey => {
@@ -44,9 +50,11 @@ const Shop = () => {
         <div>
             <div className="twin-container">
                 <div className="product-container">
-                    {
+
+                    {/* {
                         products.length === 0 && <p>Loading...</p>
-                    }
+                    } */}
+
                     {
                         products.map(pd =>
                             <Product
