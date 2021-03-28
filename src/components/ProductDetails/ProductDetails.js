@@ -20,7 +20,7 @@ const ProductDetails = () => {
     // }, [productKey])
 
     const product = fakeData.find(pd => pd.key === productKey)
-
+    document.title = 'Product Details'
     return (
         <div>
             {/* <h1 >{productKey} Details Comming Soon....</h1> */}

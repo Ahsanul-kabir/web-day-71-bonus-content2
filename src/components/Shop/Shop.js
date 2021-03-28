@@ -46,6 +46,8 @@ const Shop = () => {
         setCart(newCart);
         addToDatabaseCart(product.key, count)
     }
+
+    document.title = 'Shop More'
     return (
         <div>
             <div className="twin-container">
